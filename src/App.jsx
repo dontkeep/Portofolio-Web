@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./components/Navbar";
+import Section from "./components/Section";
+import Footer from "./components/Footer";
+import Button from "./components/Button";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Navbar />
+      <Section title="About Me">
+        Hello! I am a Fullstack developer passionate about all kinds of development, from android to web, and from front-end to back-end.
+      </Section>
+      <Section title="Projects">
+        Here are some of my projects: will be added soon
+        <ul>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+        </ul> 
+      </Section>
+      <Section title="Contact">
+        Feel free to reach out at <strong>romadonadoni03@gmail.com</strong>
+        <br /><br />
+        <Button text="Say Hello!" onButtonClick={() => window.location.href = "mailto:romadonadoni03@gmail.com"}/>
+      </Section>
+      <Footer />
+    </div>
+  );
 }
 
 export default App
